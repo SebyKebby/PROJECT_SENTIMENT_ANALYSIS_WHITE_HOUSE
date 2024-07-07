@@ -33,7 +33,8 @@ class WhitehousebriefingspiderSpider(scrapy.Spider):
             briefing_item['briefing_type'] = None
 
         briefing_item['date']= response.css('time ::text').get()
-        briefing_item['content']= [item.strip() for item in response.css('div.row p ::text').getall()  if item.strip()]
+        paragraph = response.xpath("//div[@class='row']/p/text()").extract()
+        briefing_item['content'] = ''.join(paragraph).strip()
 
         yield briefing_item
 

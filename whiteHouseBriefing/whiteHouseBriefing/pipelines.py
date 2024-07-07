@@ -10,4 +10,11 @@ from itemadapter import ItemAdapter
 
 class WhitehousebriefingPipeline:
     def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        content = adapter.get('content')
+
+        # REMOVE LATIN1 NON BREAKING (\xa0)
+        if content:
+            content = content.replace('\xa0', '')
+            adapter['content'] = content
         return item
