@@ -11,4 +11,7 @@ Tools used :
   - Excel
 
 
+Source : https://www.whitehouse.gov/briefing-room/
+https://www.presidency.ucsb.edu/statistics/data/joseph-r-biden-public-approval
+
 10th of July 2024
